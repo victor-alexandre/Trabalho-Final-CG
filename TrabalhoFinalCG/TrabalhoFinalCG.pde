@@ -11,8 +11,6 @@ boolean Universe = true;
 PImage imgMENU;
 PImage imgBackground;
 boolean menu = true;
-boolean FuncaoDoProcessing = true;
-
 
 PFont projection_font;
 int projecao;
@@ -96,8 +94,6 @@ void setup(){
         int  translacaoX = random_X.get((k+20)%random_X.size());
         int  translacaoZ = random_Z.get(k%random_Z.size());
 
-            
-       // println("random x: " + translacaoX + "     random z: " + translacaoZ);
         for(int i = 0; i < NumeroDePontos; i+=2){
             String []parts = lines[i].split(" ");
             int xi = round(Float.parseFloat(parts[0]));
@@ -191,20 +187,9 @@ void draw(){
     } //<>//
 }
 
-//implementação para fazer funcionar a entrada de mais de uma tecla no caso o shift+tab
-//void keyReleased(){
-//    if(key == CODED){
-//        if(keyCode == SHIFT)shiftPressed = false;
-//    }
-//} //<>//
+ //<>//
 void keyPressed(){
-    if(key == 'R' || key == 'r')ResetAll();
-    
-    //COMENTEI AS FUNÇÕES ABAIXO PARA ELAS NUNCA SEREM ALTERADAS E SEMPRE FICAREM ATIVAS
-    //if(key == 'F' || key == 'f')FuncaoDoProcessing = !FuncaoDoProcessing;
-    //if(key == 'U' || key == 'u'){
-    //    Universe = !Universe; 
-    //}        
+    if(key == 'R' || key == 'r')ResetAll();    
         
     //KEYS PARA TRANSLADAR //<>//
     if(key == '1')Tz=-5;

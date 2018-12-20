@@ -47,11 +47,8 @@ public class PoligonoVF {
                 tabelaAux.add(new MatrixAuxiliar(tempYmin, tempYmax, x_for_ymin, slope));          
         }
         
-        //só colore o poligono se a flag de preencher for true, se não será desenhado apenas as bordas
         //Se a funcao do processing for true então será usado uma função do processing para pintar o poligono se não será usado minha propria função
-        if(preenche && !FuncaoDoProcessing)colorePoligono(cor_preenchimento);
-        if(preenche && FuncaoDoProcessing)colore_com_FuncaoDoProcessing(P,face.F,cor_preenchimento);
-        
+        if(preenche)colorePoligono(cor_preenchimento);        
         //desenhaPoligono(P, face, cor_preenchimento);
     } 
     
@@ -71,14 +68,13 @@ public class PoligonoVF {
                 yf = P[face.F[rows+1]][1]; 
             }
             //LinhaDDA temp = new LinhaDDA(xi, yi, xf, yf, cor_linha);
-            strokeWeight(16);
             stroke(cor_linha);
             line(xi, yi, xf, yf);
         }
     }
     
     void colorePoligono(color cor_preenchimento){
-        loadPixels();
+       // loadPixels();
         for(int scan_y = global_YMIN; scan_y <= global_YMAX; scan_y++){
             ArrayList<Intersecoes> xList = new ArrayList();//array com todas as interseções
             
@@ -111,22 +107,14 @@ public class PoligonoVF {
 
             for(int i = 0; i < xList.size()-1; i+=2){
                // if(i%2 != 0)continue;
-                LinhaDDA desenha = new LinhaDDA(xList.get(i).x, scan_y, xList.get(i+1).x, scan_y, cor_preenchimento);   
+                stroke(cor_preenchimento);
+                line(xList.get(i).x, scan_y, xList.get(i+1).x, scan_y);
+                //LinhaDDA desenha = new LinhaDDA(xList.get(i).x, scan_y, xList.get(i+1).x, scan_y, cor_preenchimento);   
             }       
            
-            updatePixels();
+          //  updatePixels();
         }
-    }
-    
-    void colore_com_FuncaoDoProcessing (int[][] Pontos, int[] Linhas, color cor_preenche) {
-      noStroke();
-      fill(cor_preenche);
-      beginShape();
-      for (int i = 0; i < Linhas.length; i++) {
-        vertex(Pontos[Linhas[i]][0], Pontos[Linhas[i]][1]);
-      }
-      endShape(CLOSE);                      
-    }
+    }    
 
     float calc_Inverse_M(int xi, int yi, int xf, int yf){
         if(yf-yi == 0) return Integer.MAX_VALUE;//essa linha é paralela ao eixo x, então iremos retornar esse valor para identificar que era será eliminada
