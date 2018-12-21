@@ -126,8 +126,7 @@ public class Objeto3D_Com_Faces{
                 FacesVisiveis.get(i).calculaZmedio(Pontos);
             }
             //ordeno as faces de forma que as com menor zmédio aparecerão nas primeiras posições do arraylist
-            Collections.sort(FacesVisiveis, new ZmedioDescendingComparator());     
-            
+            Collections.sort(FacesVisiveis, new ZmedioDescendingComparator());                 
           //  println("numero de faces visiveis: " + FacesVisiveis.size());
             
         } 
@@ -135,11 +134,7 @@ public class Objeto3D_Com_Faces{
         if(isSelected){
             for(int i = 0; i < FacesVisiveis.size(); i++){
               //  println("Zmédios: " + FacesVisiveis.get(i).Z_medio);
-             
-                //println("R "+FacesVisiveis.get(i).R + " G " + FacesVisiveis.get(i).G + " B " + FacesVisiveis.get(i).B);
-                //PoligonoVF faceatual = new PoligonoVF(Pontos, L, FacesVisiveis.get(i), color(0,255,0), true, color(0,0,255));
-                //PoligonoVF faceatual = new PoligonoVF(Pontos, L, FacesVisiveis.get(0), color(0,255,0), true, color(FacesVisiveis.get(0).R,FacesVisiveis.get(0).G,FacesVisiveis.get(0).B));
-                PoligonoVF faceatual = new PoligonoVF(Pontos, L, FacesVisiveis.get(i), color(0,255,0), true, color(FacesVisiveis.get(i).R,FacesVisiveis.get(i).G,FacesVisiveis.get(i).B));
+              PoligonoVF faceatual = new PoligonoVF(Pontos, L, FacesVisiveis.get(i), color(0,255,0), true, color(FacesVisiveis.get(i).R,FacesVisiveis.get(i).G,FacesVisiveis.get(i).B));
             }
         }
         else{

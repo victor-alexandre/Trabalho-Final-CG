@@ -45,9 +45,7 @@ public class PoligonoVF {
             //só adicionaremos as linhas que não sejam paralelas ao eixo x
             if(slope != Integer.MAX_VALUE)
                 tabelaAux.add(new MatrixAuxiliar(tempYmin, tempYmax, x_for_ymin, slope));          
-        }
-        
-        //Se a funcao do processing for true então será usado uma função do processing para pintar o poligono se não será usado minha propria função
+        }       
         if(preenche)colorePoligono(cor_preenchimento);        
         //desenhaPoligono(P, face, cor_preenchimento);
     } 

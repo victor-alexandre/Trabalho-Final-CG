@@ -2,10 +2,8 @@ import java.util.ArrayList;
 import java.util.*;
 import java.awt.event.KeyEvent;
 
-String PATH = "/home/accelerator/Documents/4 semestre/computaçãografica/trees/models/tree2d";
-int NumeroDeArquivos = new File(PATH).list().length;
-//int NumeroDeArquivos = 15;
-int MaxTrees = 50;
+//Numero máximo de árvores mostradas na tela
+int MaxTrees = 100;
 
 boolean Universe = true;
 PImage imgMENU;
@@ -21,8 +19,12 @@ float Sx, Sy, Sz;//INCREMENTOS PARA A ESCALA
 
 ArrayList <Objeto3D> ObjectList = new ArrayList();
 ArrayList <Objeto3D_Com_Faces> ObjectList_Com_Faces = new ArrayList();
-
+    
 void setup(){
+    String PATH = sketchPath("arvores/tree2d");
+    int NumeroDeArquivos = new File(PATH).list().length;
+    
+    
     //PRIMEIRA COISA QUE ESTOU FAZENDO É ADICIONAR O CHÃO DA FLORESTA
     int [][]Floor_Points = {{3*width/8, 0, 2*width/8}, {3*width/8, 0, -2*width/8},
                             {-3*width/8, 0, 2*width/8}, {-3*width/8, 0, -2*width/8}};
@@ -49,7 +51,6 @@ void setup(){
     Sx = 0;
     Sy = 0;
     Sz = 0;
-
     
     projecao = 0;
     
