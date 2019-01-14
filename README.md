@@ -8,3 +8,4 @@ Esse repositório contém a implementação em processing de uma "floresta". O a
 
 O código gerador das árvores foi feito pelo [Ruan Chaves](https://github.com/ruanchaves) com o uso do L-Systems e pode ser encontrado aqui: https://github.com/ruanchaves/trees
 
+Obs: Para executar o programa você precisará ter o processing instalado. Ele poderá ser baixado em https://processing.org/download/
