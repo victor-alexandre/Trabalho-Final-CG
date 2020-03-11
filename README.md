@@ -8,7 +8,7 @@ Esse repositório contém a implementação em processing de uma "floresta". O a
 
 O código gerador das árvores foi feito pelo [Ruan Chaves](https://github.com/ruanchaves) com o uso do L-Systems e pode ser encontrado aqui: https://github.com/ruanchaves/trees
 
-O relatório produzido no final da disciplina pode ser encontrada neste repositório no arquivo [Relatório.pdf](https://github.com/victor-alexandre/Trabalho-Final-CG/blob/master/Relat%C3%B3rio.pdf)
+O relatório produzido no final da disciplina pode ser encontrado neste repositório no arquivo [Relatório.pdf](https://github.com/victor-alexandre/Trabalho-Final-CG/blob/master/Relat%C3%B3rio.pdf)
 
 O [vídeo 1](https://drive.google.com/open?id=1yXrDJCXqAZ9xxZjxrTBBWBF_QJ0fRJpL) e [vídeo 2](https://drive.google.com/open?id=1m-mWs6NaVz-8MXC_pkfJ1xD3lp8qkIQZ) mostram o que aparece durante a execução do programa.
 
